@@ -1,0 +1,446 @@
+html,
+body {
+  font-family: Stolz, "Stolzl", Arial, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+      59.03% 51.02% at 45.82% 100%,
+      rgba(34, 30, 237, 0.11) 0%,
+      rgba(14, 144, 248, 0.07) 54.8%,
+      rgba(2, 209, 255, 0) 100%
+    ),
+    #f7f9ff;
+}
+
+.layout {
+  display: flex;
+  max-width: 80rem;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  padding: 1rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.logotype {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logotype__icon {
+  width: 3rem;
+  height: 3rem;
+  background-image: url(./assets/logotype.svg);
+  background-repeat: no-repeat;
+}
+
+.logotype__about {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.logotype__about-name {
+  width: 11.0625rem;
+  height: 1.25rem;
+  background-image: url(./assets/name.svg);
+  background-repeat: no-repeat;
+}
+.logotype__about-description {
+  width: 10.9375rem;
+  height: 0.8125rem;
+  background-image: url(./assets/description.svg);
+  background-repeat: no-repeat;
+}
+
+.linkIcon {
+  width: 1rem;
+  height: 1rem;
+  aspect-ratio: 1/1;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.social--bottom {
+  display: flex;
+}
+
+.social__link {
+  display: flex;
+  padding: 0.75rem 0.5rem;
+  align-items: center;
+  gap: 0.25rem;
+
+  text-decoration: none !important;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.social__link:hover {
+  transition: none;
+}
+
+.social__link[type="hh"] {
+  color: rgba(255, 0, 2, 0.35);
+}
+.social__link[type="hh"]:hover {
+  color: rgba(255, 0, 2, 0.65);
+}
+
+.social__link[type="linkedin"] {
+  color: rgba(10, 102, 194, 0.35);
+}
+.social__link[type="linkedin"]:hover {
+  color: rgba(10, 102, 194, 0.65);
+}
+
+.social__link[type="dribbble"] {
+  color: rgba(234, 76, 137, 0.35);
+}
+.social__link[type="dribbble"]:hover {
+  color: rgba(234, 76, 137, 0.65);
+}
+
+.menu__portfolioLink {
+  text-decoration: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3.125rem;
+  background: #66a1ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu__portfolioLink:hover {
+  transition: none;
+  opacity: 0.65;
+}
+
+.menu__portfolioLink-text {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer {
+  display: flex;
+  padding: 0.625rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+}
+
+.lead {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+
+.lead h1 {
+  color: #373b46;
+  leading-trim: both;
+  text-edge: cap;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.15rem;
+  line-height: 1.25;
+  letter-spacing: -0.055rem;
+  text-align: center;
+}
+
+.lead__image {
+  width: 19.22488rem;
+  height: 9.05656rem;
+  background-image: url(assets/wombuttons-mobile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Изменение отображения контента */
+.content {
+  display: flex;
+  padding: 0 1rem 4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+}
+
+.content__left,
+.content__right {
+  display: none;
+}
+
+/* Создаем общий контейнер для всех карточек в мобильной версии */
+.mobile-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem 2rem 2rem 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  border: 4px solid rgba(0, 0, 0, 0.5);
+  background: #fff;
+  box-shadow: 0px 4px 15px 0px rgba(55, 59, 70, 0.05);
+  margin: 0 auto;
+}
+.card--skillz {
+  /* transform: scale(1.005); */
+  border: 4px solid rgba(43, 183, 123, 0.5);
+  order: 1;
+}
+.card--figma {
+  border: 4px solid rgba(131, 133, 249, 0.5);
+  order: 2;
+}
+.card--management {
+  border: 4px solid rgba(63, 209, 218, 0.5);
+  order: 3;
+}
+.card--analytics {
+  border: 4px solid rgba(100, 159, 255, 0.5);
+  order: 4;
+}
+.card--dev {
+  border: 4px solid rgba(255, 159, 64, 0.5);
+  order: 5;
+}
+
+.card__icon {
+  width: 3rem;
+  height: 3rem;
+  aspect-ratio: 1/1;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+}
+.card h3 {
+  color: #373b46;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem; /* 125% */
+}
+
+.card__description {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card__description p {
+  color: rgba(55, 59, 70, 0.65);
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.25rem 0rem 4rem 0rem;
+  width: 100%;
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta__content h2 {
+  color: rgba(55, 59, 70, 0.85);
+  text-align: center;
+  font-size: 2.15rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.cta__content p {
+  color: rgba(99, 106, 125, 0.65);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45rem;
+}
+
+.cta__link {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  border-radius: 12.5rem;
+  background: rgba(102, 161, 255, 0.65);
+
+  /* card shadow */
+  box-shadow: 0px 4px 15px 0px rgba(55, 59, 70, 0.05);
+
+  color: #fff;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  transition: background 0.3s ease;
+}
+.cta__link:hover {
+  transition: none;
+  background: rgba(102, 161, 255, 1);
+}
+
+.cta__link img {
+  width: 1rem;
+  height: 0.6875rem;
+  aspect-ratio: 16/11;
+}
+
+@media (min-width: 1024px) {
+  .logotype__about,
+  .social {
+    display: flex;
+  }
+
+  .social {
+    gap: 0.5rem;
+  }
+
+  .social[type="bottom"],
+  .footer {
+    display: none;
+  }
+
+  .lead {
+    flex-direction: row;
+    padding: 8rem 0rem;
+    gap: 2rem;
+  }
+
+  .lead h1 {
+    font-size: 2.5rem;
+    line-height: 4.125rem;
+  }
+
+  .lead__image {
+    width: 24.67706rem;
+    height: 11.625rem;
+    background-image: url(assets/wombuttons.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* Десктопный вид контента */
+  .content {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem 4rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .mobile-cards {
+    display: none;
+  }
+
+  .content__left,
+  .content__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .content__right {
+    padding-top: 4rem;
+  }
+
+  .card {
+    width: 28rem;
+    padding: 2rem 3rem 3rem 3rem;
+    gap: 1.5rem;
+    order: initial; /* Сбрасываем порядок для десктопа */
+  }
+
+  .cta {
+    padding: 6.25rem 0rem 8rem 0rem;
+  }
+
+  .cta__content h2 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .cta__content p {
+    font-size: 1.25rem;
+
+    line-height: 1.75rem;
+  }
+}
