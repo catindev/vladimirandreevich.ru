@@ -320,7 +320,7 @@ body {
   color: rgba(55, 59, 70, 0.85);
   text-align: center;
   text-wrap: balance;
-  font-size: 2.15rem;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
@@ -437,11 +437,6 @@ body {
 
   .cta {
     padding: 6.25rem 0rem 8rem 0rem;
-  }
-
-  .cta__content h2 {
-    font-size: 3rem;
-    line-height: 3.5rem;
   }
 
   .cta__content p {
